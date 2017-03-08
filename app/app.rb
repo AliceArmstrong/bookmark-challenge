@@ -15,6 +15,15 @@ class BookmarkManager < Sinatra::Base
     # end
     # @links = links.join("\n")
     @links = Link.all
-    erb(:database)
+    erb(:bookmarks)
   end
+
+  get "/bookmarks/new" do
+    erb :bookmarks/new
+  end
+
+  post '/bookmarks'
+
+  end
+
 end
