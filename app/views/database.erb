@@ -1,0 +1,13 @@
+<!-- <h3> <%= @links %> </h3> -->
+<h1>Bookmarks</h1>
+<ul id='links'>
+  <% @links.each do |link| %>
+  <li>
+    Title: <%= link.title %>
+    URL: <%= link.url %>
+  </li>
+  <% end %>
+</ul>
+<!-- <h3> <%= p @test %> </h3>
+<h3> <%= @test %> </h3> -->
+<!-- <h3> Hello World </h3> -->

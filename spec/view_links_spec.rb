@@ -5,6 +5,6 @@ RSpec.feature 'it will display the links' do
     visit "/"
     click_button('View Bookmarks')
     # Link.create(:id => 6, :title => 'eBay', :url => 'http//www.ebay.co.uk')
-    expect(page).to have_content ('http://www.google.co.uk')
+    expect(page).to have_content ('http://www.google.com')
   end
 end

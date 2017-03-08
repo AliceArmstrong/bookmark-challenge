@@ -9,11 +9,12 @@ class BookmarkManager < Sinatra::Base
   end
 
   get "/bookmarks" do
-    links = []
-    Link.all.each do |l|
-      links << l.url.to_s
-    end
-    @links = links.join("\n")
+    # links = []
+    # Link.all.each do |l|
+    #   links << l.url.to_s
+    # end
+    # @links = links.join("\n")
+    @links = Link.all
     erb(:database)
   end
 end
