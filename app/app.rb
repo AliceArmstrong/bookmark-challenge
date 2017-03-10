@@ -1,5 +1,10 @@
+p ENV['RACK_ENV']
+ENV['RACK_ENV'] ||='development'
+p ENV['RACK_ENV']
+
 require 'sinatra/base'
 require './app/models/link'
+
 
 class BookmarkManager < Sinatra::Base
   #enable :sessions
@@ -9,21 +14,20 @@ class BookmarkManager < Sinatra::Base
   end
 
   get "/bookmarks" do
-    # links = []
-    # Link.all.each do |l|
-    #   links << l.url.to_s
-    # end
-    # @links = links.join("\n")
     @links = Link.all
     erb(:bookmarks)
   end
 
   get "/bookmarks/new" do
-    erb :bookmarks/new
+    erb(:new)#:bookmarks/new
   end
 
-  post '/bookmarks'
-
+  post '/bookmarks' do
+    Link.create(
+    :title => params[:title],
+    :url => params[:url]
+    )
+    redirect "/bookmarks"
   end
 
 end

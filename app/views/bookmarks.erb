@@ -1,13 +1,16 @@
-<!-- <h3> <%= @links %> </h3> -->
-<h1>Bookmarks</h1>
+<font face="verdana">
+<h2>Bookmarks</h2>
+
+<form method="get" action="/bookmarks/new">
+  <input type="submit" value="Create new bookmark">
+</form>
+
 <ul id='links'>
   <% @links.each do |link| %>
   <li>
-    Title: <%= link.title %>
-    URL: <%= link.url %>
+    <strong><%= link.title %></strong>
+    <i><%= link.url %></i>
   </li>
   <% end %>
 </ul>
-<!-- <h3> <%= p @test %> </h3>
-<h3> <%= @test %> </h3> -->
-<!-- <h3> Hello World </h3> -->
+</font>
