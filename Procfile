@@ -1,1 +1,1 @@
-web: bundle exec rackup config.ru -p 5000
+web: bundle exec rack config.ru -p $PORT
